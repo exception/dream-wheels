@@ -63,15 +63,24 @@ export const generatePlaceholder = (): PromptOptions => {
         'greenland',
         'a national park',
         'a rainforest',
-        'the amazonian',
-        'egypt with pyramids'
+        'the amazonian rainforest',
+        'egypt with pyramids',
+        'a vietnamese jungle',
+        'a bridge over the potomac',
+        'a road next to the nile',
+        'the scottish highlands',
+        'edinbrugh castle',
+        'buenos aires\' streets'
     ];
     const type = [
         'rally',
         'joy-ride',
-        'midnight drive',
+        'driving at midnight',
         'rainy drive',
         'snowing drive',
+        'driving at sunset',
+        'driving at sunrise',
+        'driving during a starry night'
     ];
     const origin = [
         'american',
