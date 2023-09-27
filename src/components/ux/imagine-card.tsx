@@ -16,13 +16,14 @@ import {
 
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
+import Link from 'next/link';
 
 interface Props {
     imagination: Imagination;
     refreshInterval?: number;
 }
 
-const ImagineCard = ({ imagination, refreshInterval = 1000 }: Props) => {
+const ImagineCard = ({ imagination, refreshInterval = 5000 }: Props) => {
     const [finished, setFinished] = useState(false);
     const { updateEntry } = useCarPovider();
     const { isInitialLoading, data } = trpc.replicate.get.useQuery(
@@ -50,9 +51,17 @@ const ImagineCard = ({ imagination, refreshInterval = 1000 }: Props) => {
         <div className="rounded-md w-full border border-neutral-200 bg-neutral-50 col-span-2 shadow-sm text-left overflow-hidden">
             <div className="flex w-full justify-between items-center p-4">
                 <div className="flex flex-col space-y-2">
-                    <p className="text-sm text-neutral-600">
-                        #{imagination.id}
-                    </p>
+                    {imagination.url ? (
+                        <Link href={`/dream/${imagination.id}`}>
+                            <p className="text-sm text-neutral-600 underline underline-offset-4 decoration-dashed">
+                                #{imagination.id}
+                            </p>
+                        </Link>
+                    ) : (
+                        <p className="text-sm text-neutral-600">
+                            #{imagination.id}
+                        </p>
+                    )}
                     <p className="text-xs text-neutral-400 max-w-sm">
                         {imagination.prompt}
                     </p>
@@ -102,7 +111,10 @@ const ImagineCard = ({ imagination, refreshInterval = 1000 }: Props) => {
                         </Zoom>
                         <div className="p-4 bg-neutral-100 ">
                             <p className="text-xs text-neutral-400">
-                                Full Prompt: {data.prompt}
+                                <span className="font-semibold">
+                                    Full Prompt:
+                                </span>{' '}
+                                {data.prompt}
                             </p>
                         </div>
                     </div>
