@@ -23,7 +23,7 @@ export const generateCar = async (prompt: string) => {
             input: {
                 prompt: replicatePrompt,
                 negative_prompt:
-                    'deformed, motionless, out of frame, painting, unreal, ((driver, male driver, female driver)), people, persons, companions, animals, license plate, identifier, plate, morphed headlights, deformed roads, duplicated headlights, deformed wheels',
+                    'deformed, motionless, out of frame, painting, unreal, drivers, people, persons, companions, animals, visible license plate, readable license plate, number plate, morphed headlights, deformed roads, duplicated headlights, deformed wheels, rear view, tail lights',
             },
             webhook_events_filter: ['completed'],
             webhook: `${WEBHOOK_URL}?id=${promptId}`
