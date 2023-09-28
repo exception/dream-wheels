@@ -20,7 +20,7 @@ export const generateMetadata = async ({
     if (!dream || !dream.url) return undefined;
 
     const title = `Dream #${dream.id}`;
-    const description = `A vintage car generated from ${dream.prompt}`;
+    const description = dream.prompt;
 
     return {
         title,

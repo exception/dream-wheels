@@ -53,6 +53,8 @@ export const generatePlaceholder = (): PromptOptions => {
         '1950s',
         '1960s',
         '1970s',
+        '1980s',
+        '1990s',
         'pre-war era',
     ];
     const locations = [
@@ -88,9 +90,12 @@ export const generatePlaceholder = (): PromptOptions => {
         'german',
         'japanese',
         'french',
+        'italian',
         'american sports',
         'british sports',
         'german sports',
+        'italian sports',
+        'japanese sports'
     ];
 
     return {

@@ -21,6 +21,7 @@ const ImagineForm = () => {
     const generateCar = trpc.replicate.generate.useMutation({
         onSuccess: ({ id, prompt }) => {
             addEntry({ id, prompt });
+            form.setValue('prompt', generatePrompt(generatePlaceholder()));
         },
     });
 
