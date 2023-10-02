@@ -2,7 +2,9 @@ import MaxWidthContainer from '@/components/max-width';
 import { FadeIn, FadeInStagger } from '@/components/ui/fade-in';
 import ImagineForm from '@/components/ux/imagine-form';
 import ImagineRecord from '@/components/ux/imagine-record';
+import { Github } from 'lucide-react';
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Dream Wheels',

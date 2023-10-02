@@ -23,7 +23,7 @@ export const generatePrompt = ({
     type = 'rally',
     origin = 'british',
 }: PromptOptions): string => {
-    const prompt = `A vintage, ${color}, ${origin} car from the ${era}, ${type} through ${location}`;
+    const prompt = `A vintage, ${color}, ${origin} from the ${era}, ${type} through ${location}`;
 
     return prompt;
 };
@@ -31,7 +31,7 @@ export const generatePrompt = ({
 export const generateReplicatePrompt = (prompt: string) => {
     return `${prompt}. ${staticParts.join(
         ', ',
-    )}. Picture taken from the left hand side with a DSLR camera, medium grain. Car must be centered within the surroundings and facing the front.`;
+    )}. Picture taken from the left hand side with a DSLR camera, medium grain. Vehicle must be centered within the surroundings and facing the front.`;
 };
 
 export const generatePlaceholder = (): PromptOptions => {
@@ -85,17 +85,19 @@ export const generatePlaceholder = (): PromptOptions => {
         'driving during a starry night'
     ];
     const origin = [
-        'american',
-        'british',
-        'german',
-        'japanese',
-        'french',
-        'italian',
-        'american sports',
-        'british sports',
-        'german sports',
-        'italian sports',
-        'japanese sports'
+        'american car',
+        'american suv',
+        'american truck',
+        'british car',
+        'german car',
+        'japanese car',
+        'french car',
+        'italian car',
+        'american sports car',
+        'british sports car',
+        'german sports car',
+        'italian sports car',
+        'japanese sports car'
     ];
 
     return {

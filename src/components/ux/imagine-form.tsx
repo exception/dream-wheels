@@ -34,12 +34,14 @@ const ImagineForm = () => {
     });
 
     const onSubmit = async (form: z.infer<typeof formSchema>) => {
-        const prompt = form.prompt;
+        const prompt = form.prompt.toLowerCase();
         const isValidCarPrompt =
             prompt.includes('car') ||
             prompt.includes('vehicle') ||
             prompt.includes('bike') ||
-            prompt.includes('motorcycle');
+            prompt.includes('motorcycle') ||
+            prompt.includes('truck') ||
+            prompt.includes('suv');
 
         if (!isValidCarPrompt) {
             toast({
